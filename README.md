@@ -17,7 +17,7 @@ Commit your work to each section in a separate sub folder to your cloned repo, t
 We expect each section to take around 1 hour to complete. Therefore should you complete all three sections, it may take around 3-4 hours. You may be faster or slower depending on your skillset. 
 
 
-## Challenge 1: Algorithms (Required)
+## challenge1: Algorithms (Required)
 
 Your first challenge is to solve two algorithm questions. You'll be judged based on correctness, performance, and code readability. 
 
