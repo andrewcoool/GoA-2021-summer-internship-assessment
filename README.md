@@ -23,6 +23,10 @@ Your first challenge is to solve two algorithm questions. You'll be judged based
 
 Please complete this section in Java.
 
+**About run time analysis:** We won't do a strict run time assessment but it will have some factor in it if it is wildly inefficient (eg: you have nested loops when it was not necessary, etc).  
+
+It's also a trade off between super optimized code and readability, so take that into consideration as well. You should optimize to some degree but if it becomes very hard to comprehend then that is probably too far
+
 Before each code block, please outline your approach/algorithm to solving the problem.
 ---
 ### Example of how each algorithm should be submitted: 
@@ -64,7 +68,7 @@ static int GetNth(Node head, int n)
 
 Create a function that accepts an array of integers and a target sum. The function will print all pairs of integers in the array whose sum is equal to the target sum. 
 
-Feel free to expand the test cases and think of any edge cases.
+Feel free to expand the test cases and think of any edge cases. Your answer should be able to handle duplicate numbers in the input, but we only expect unique pairs to be in the output. We do not have any specific requirements about sorting the output  (small integer, larger integer or vice versa). Be ready to justify your decision, should we choose to ask.
 
 Here's an example:
 
@@ -124,12 +128,22 @@ Your second challenge is to develop a small app from scratch. Here are the requi
 Convert the following figma design to a functioning webpage: [Figma](https://www.figma.com/file/cjFsTTzlsFnjW90fkbxloW/GOA-Front-End-Test-Mocks)
 
 Files are located in a zip file in the git repo
-
-### Requirements
 * You can use any front end framework you choose, but we have a slight preference towards React, Angular, or Vanilla HTML/JS/CSS. However, use whatever framework you are comfortable with.
 * Make it responsive using your best judgement.
-* Create a simple transparent overlay for photos - use only vanilla JavaScript or what is built into the framework, do not import jQuery or any other external libraries for it.
 * If you are using a framework, make sure you compile it down to static files and include that alongside your code with the submission.
+
+### Requirements
+* Create a webpage. The page contains:
+     * Header with the text `Hello World`
+     * Sub-header with the text `Wow! Check out all the cool CSS and Javascript things I can do!`
+* Create 4 image blocks with the following crops/masks:
+     * Image in a circle
+     * Image in a 4:3 rectangle
+     * Image in a 1:1 square
+     * Image in a triangle
+* The image blocks should be clickable
+     * When the user clicks on an image block, it should open in a translucent overlay (use only vanilla JavaScript or what is built into the framework, do not import jQuery or any other external libraries for it.)
+* Background should have a blue to light blue gradient
 
 Optional Extras: 
 * Create some hover effect for the image thumbnails.
