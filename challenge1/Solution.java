@@ -8,6 +8,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Solution {
     /*
+    Q1 Find all pairs for a given sum
+
     How the algorithm works (generally):
     Consider an arbitrary pair for testArray that adds up to targetSum. We know that there are two indices
     associated to this pair. The algorithm iterates through testArray and accumulates in prevInts the integers that
@@ -28,7 +30,8 @@ public class Solution {
                 b2. Initialize num2 = targetSum - num1 (notice that num1 + num2 = targetSum).
                 b3. Check if prevInts contains num2.
                     If true,
-                        Then we have reached the larger index of a valid pair to print.
+                        Then notice that num1 and num2 are both in testArray and that they sum to
+                        targetSum.
                         Print (min(num1, num2), max(num1, num2))
                     Otherwise,
                         Then num1 still might be part of a pair, and i might be the smaller index of such a pair.
@@ -42,13 +45,22 @@ public class Solution {
 
                 b1. Check if isHalfPairPrinted is false and num1 + num1 = targetSum
                     If true,
-                        Then (num1, num1) is a pair that has not been printed yet.
+                        Then notice that num1 appears at the current index, and also appears
+                        before in the testArray. So num1 appears at least twice and (num1, num1) is a pair.
+                        As isHalfPairPrinted is false, then (num1, num1) has not been printed yet.
                         b1a. Print (num1, num1)
                     Otherwise,
-                        Then the pair with num1 as the element with larger index has already been checked,
-                        or no such pair exists so nothing needs to be done.
+                        Then isHalfPairPrinted is true or num1 + num1 != targetSum.
 
-                        Notice that this branch in the if-else tree prevents the printing of duplicate pairs.
+                        If isHalfPairPrinted is true, then we have already printed the pair
+                        (num1, num1) so we don't need to print it yet.
+
+                        If num1 + num1 != targetSum, then we have already considered num1 in
+                        previous iterations. Notice that if a pair was already printed, then both
+                        the numbers in the pair must be in prevInts. Either a pair with num1 in it was already
+                        printed or no such pair exists (so far by this loop iteration).
+
+                        In either case, we don't need to do anything.
     */
     public static void findPairs(int[] testArray, int targetSum){
         System.out.println("Finding Pairs...");
@@ -84,14 +96,15 @@ public class Solution {
 
     /*
     This is a helper function for the reconcileHelper method.
-    (see the document comment below).
+    (see the document comment below for details on what this
+    function does).
 
     Algorithm Structure:
     1. Initialize an empty toReturn set of integers.
-    2. Loop through the set a (loop variable x).
-        a. Check x is not in set b.
+    2. Loop through the set a (with loop variable x).
+        a. Check if x is not in set b.
             If true,
-                Then add the num to toReturn.
+                Then add x to toReturn.
     3. Return toReturn.
      */
     /**
@@ -149,23 +162,5 @@ public class Solution {
         System.out.print(String.join(" ", aMinusB) + "\n\n");
         System.out.println("Numbers in array b that aren't in array a");
         System.out.print(String.join(" ", bMinusA) + "\n");
-    }
-
-    /**
-     * Return an array of random integers.
-     *
-     * @param length The length of the array.
-     * @param min The min bound for the random integers.
-     * @param max The max bound for the random integers.
-     * @return An array of random integers.
-     */
-    public static int[] randInts(int length, int min, int max){
-        int[] toReturn = new int[length];
-
-        for (int i = 0; i < length; i++){
-            toReturn[i] = ThreadLocalRandom.current().nextInt(min, max + 1);
-        }
-
-        return toReturn;
     }
 }
