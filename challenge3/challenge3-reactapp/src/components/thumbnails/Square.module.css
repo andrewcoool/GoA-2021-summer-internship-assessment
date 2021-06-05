@@ -1,0 +1,8 @@
+.square{
+    overflow: hidden;
+    border: 10px solid white;
+}
+
+.square > img{
+    pointer-events: none;
+}

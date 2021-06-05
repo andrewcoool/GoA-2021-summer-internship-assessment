@@ -1,0 +1,31 @@
+.title{
+    font-weight: 800;
+    color:black;
+    font-size: 32px;
+    margin: 0px 0 40px 0;
+}
+
+.img-container{
+    max-width: 390px;
+    max-height: 390px;
+    overflow: hidden;
+}
+
+.img-container > img{
+    width: 390px;
+}
+
+.content{
+    width: 400px;
+    text-align:center;
+}
+
+.container{
+    min-width: 400px;
+    max-width: 1000px;
+    width: calc(100vw - 200px);
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

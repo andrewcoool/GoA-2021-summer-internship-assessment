@@ -1,0 +1,9 @@
+.circle{
+    overflow: hidden;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+.circle > img{
+    pointer-events: none;
+}

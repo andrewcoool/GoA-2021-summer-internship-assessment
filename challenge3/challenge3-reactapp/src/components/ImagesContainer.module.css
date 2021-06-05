@@ -1,0 +1,10 @@
+.images-container{
+    max-width: 1200px;
+    display: inline-block;
+}
+
+.images-container > *{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 70px;
+}

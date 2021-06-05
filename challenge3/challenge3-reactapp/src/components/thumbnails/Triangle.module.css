@@ -1,0 +1,11 @@
+.border{
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    background-color: white;
+    padding: 17px;
+}
+
+.triangle{
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    margin-top: 17px;
+    pointer-events: none;
+}

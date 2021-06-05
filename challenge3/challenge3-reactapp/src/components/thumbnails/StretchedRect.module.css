@@ -1,0 +1,11 @@
+.rect {
+    overflow: hidden;
+    border: 10px solid white;
+}
+
+.rect > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    pointer-events: none;
+}
