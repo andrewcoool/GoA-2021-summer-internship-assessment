@@ -7,6 +7,10 @@ import Square from "./thumbnails/Square";
 import StretchedRect from "./thumbnails/StretchedRect";
 import ImageOverlay from "./overlay/ImageOverlay";
 
+/**
+ * React component that displays a collection of image
+ * thumbnails.
+ */
 function ImagesContainer(props) {
     const images = [];
     const overlayRoutes = [];
@@ -83,7 +87,6 @@ function ImagesContainer(props) {
         <div>
             <div className={classes["images-container"]}>{images}</div>
             <Switch>
-                <Route path="/" exact={true}></Route>
                 {overlayRoutes}
             </Switch>
         </div>

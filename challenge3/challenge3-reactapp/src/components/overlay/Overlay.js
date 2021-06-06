@@ -1,5 +1,8 @@
 import classes from './Overlay.module.css'
 
+/**
+ * React component for an empty full-screen overlay.
+ */
 export default function Overlay(props){
     return (
         <div>

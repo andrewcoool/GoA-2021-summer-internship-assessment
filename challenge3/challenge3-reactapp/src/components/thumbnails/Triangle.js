@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import EnlargeOnHover from "../animations/EnlargeOnHover";
 import classes from "./Triangle.module.css";
 
+/**
+ * React component for a Triangle thumbnail, which when clicked
+ * routes to a new page and opens an ImageOverlay.
+ */
 export default function Triangle(props) {
     return (
         <Link to={props.routePath}>

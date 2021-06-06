@@ -1,6 +1,10 @@
 import Overlay from "./Overlay";
 import classes from "./ImageOverlay.module.css";
 
+/**
+ * React component for a full-screen overlay containing
+ * a header and image.
+ */
 export default function ImageOverlay(props) {
     return (
         <Overlay onExit={props.onExit}>

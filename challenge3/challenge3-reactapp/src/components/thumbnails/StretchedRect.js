@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import EnlargeOnHover from "../animations/EnlargeOnHover";
 import classes from "./StretchedRect.module.css";
 
+/**
+ * React component for a stretched rectangle thumbnail.
+ * The image contained in the thumbnail is stretched to the 
+ * aspect ratio specified in props.aspectRatio.
+ * 
+ * When clicked, route to a new page and open an ImageOverlay.
+ */
 export default function StretchedRect(props) {
     const aspectRatio = props.aspectRatio.split(":");
     const widthRatio = parseInt(aspectRatio[0]);
