@@ -1,18 +1,23 @@
+import { Route, Switch, useHistory } from "react-router-dom";
+
 import Circle from "./thumbnails/Circle";
 import Triangle from "./thumbnails/Triangle";
 import classes from "./ImagesContainer.module.css";
 import Square from "./thumbnails/Square";
 import StretchedRect from "./thumbnails/StretchedRect";
+import ImageOverlay from "./overlay/ImageOverlay";
 
 function ImagesContainer(props) {
-    let images = [];
-    let i = 0;
+    const images = [];
+    const overlayRoutes = [];
+
+    const history = useHistory();
 
     for (let imageData of props.imagesData) {
         const imgSrc = imageData[0];
         const thumbnailType = imageData[1];
         const overlayHeading = imageData[2];
-        const imgClassName = imageData[3];
+        const routePath = imageData[3];
 
         if (thumbnailType.includes(":")) {
             images.push(
@@ -21,29 +26,28 @@ function ImagesContainer(props) {
                     src={imgSrc}
                     width={320}
                     overlayHeading={overlayHeading}
-                    imgClassName={imgClassName}
-                    key={i}
+                    routePath={routePath}
+                    key={routePath}
                 ></StretchedRect>
             );
-        }else if (thumbnailType === 'square'){
+        } else if (thumbnailType === "square") {
             images.push(
                 <Square
                     src={imgSrc}
                     width={320}
                     overlayHeading={overlayHeading}
-                    imgClassName={imgClassName}
-                    key={i}
+                    routePath={routePath}
+                    key={routePath}
                 ></Square>
-            )
-
+            );
         } else if (thumbnailType === "circle") {
             images.push(
                 <Circle
                     src={imgSrc}
                     diameter={320}
                     overlayHeading={overlayHeading}
-                    imgClassName={imgClassName}
-                    key={i}
+                    routePath={routePath}
+                    key={routePath}
                 ></Circle>
             );
         } else if (thumbnailType === "triangle") {
@@ -52,16 +56,37 @@ function ImagesContainer(props) {
                     src={imgSrc}
                     width={280}
                     overlayHeading={overlayHeading}
-                    imgClassName={imgClassName}
-                    key={i}
+                    routePath={routePath}
+                    key={routePath}
                 ></Triangle>
             );
         }
 
-        i++;
+        overlayRoutes.push(
+            <Route path={routePath} exact={true} key={"route_" + routePath}>
+                <ImageOverlay
+                    overlayHeading={overlayHeading}
+                    imgSrc={imgSrc}
+                    onExit={() => {
+                        // On exit of ImageOverlay
+                        // Route back to '/' to close the overlay
+
+                        history.push("/");
+                    }}
+                ></ImageOverlay>
+            </Route>
+        );
     }
 
-    return <div className={classes['images-container']}>{images}</div>
+    return (
+        <div>
+            <div className={classes["images-container"]}>{images}</div>
+            <Switch>
+                <Route path="/" exact={true}></Route>
+                {overlayRoutes}
+            </Switch>
+        </div>
+    );
 }
 
 export default ImagesContainer;

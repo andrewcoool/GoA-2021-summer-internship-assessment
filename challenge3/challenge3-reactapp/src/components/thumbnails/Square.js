@@ -1,13 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import EnlargeOnHover from "../animations/EnlargeOnHover";
-import ClickableThumbnail from "./ClickableThumbnail";
 import classes from "./Square.module.css";
 
 export default function Square(props) {
     return (
-        <ClickableThumbnail
-            imgSrc={props.src}
-            overlayHeading={props.overlayHeading}
-        >
+        <Link to={props.routePath}>
             <EnlargeOnHover>
                 <div
                     className={classes.square}
@@ -23,6 +21,6 @@ export default function Square(props) {
                     ></img>
                 </div>
             </EnlargeOnHover>
-        </ClickableThumbnail>
+        </Link>
     );
 }

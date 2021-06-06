@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
+
 import EnlargeOnHover from "../animations/EnlargeOnHover";
-import ClickableThumbnail from "./ClickableThumbnail";
 import classes from "./StretchedRect.module.css";
 
 export default function StretchedRect(props) {
@@ -10,10 +11,7 @@ export default function StretchedRect(props) {
     const height = props.width * (heightRatio / widthRatio);
 
     return (
-        <ClickableThumbnail
-            imgSrc={props.src}
-            overlayHeading={props.overlayHeading}
-        >
+        <Link to={props.routePath}>
             <EnlargeOnHover>
                 <div
                     className={classes.rect}
@@ -31,6 +29,6 @@ export default function StretchedRect(props) {
                     ></img>
                 </div>
             </EnlargeOnHover>
-        </ClickableThumbnail>
+        </Link>
     );
 }

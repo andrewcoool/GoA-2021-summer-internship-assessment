@@ -1,13 +1,12 @@
+
+import { Link } from 'react-router-dom';
+
 import EnlargeOnHover from "../animations/EnlargeOnHover";
 import classes from "./Circle.module.css";
-import ClickableThumbnail from "./ClickableThumbnail";
-
 export default function Circle(props) {
+    
     return (
-        <ClickableThumbnail
-            imgSrc={props.src}
-            overlayHeading={props.overlayHeading}
-        >
+        <Link to={props.routePath}>
             <EnlargeOnHover>
                 <div
                     className={classes.circle}
@@ -23,6 +22,6 @@ export default function Circle(props) {
                     ></img>
                 </div>
             </EnlargeOnHover>
-        </ClickableThumbnail>
+        </Link>
     );
 }

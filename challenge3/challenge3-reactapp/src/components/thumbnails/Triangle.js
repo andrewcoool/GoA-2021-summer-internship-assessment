@@ -1,13 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import EnlargeOnHover from "../animations/EnlargeOnHover";
-import ClickableThumbnail from "./ClickableThumbnail";
 import classes from "./Triangle.module.css";
 
 export default function Triangle(props) {
     return (
-        <ClickableThumbnail
-            imgSrc={props.src}
-            overlayHeading={props.overlayHeading}
-        >
+        <Link to={props.routePath}>
             <EnlargeOnHover>
                 <div
                     className={classes.border}
@@ -31,6 +29,6 @@ export default function Triangle(props) {
                     </div>
                 </div>
             </EnlargeOnHover>
-        </ClickableThumbnail>
+        </Link>
     );
 }
