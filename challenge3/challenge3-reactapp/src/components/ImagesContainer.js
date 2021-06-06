@@ -35,6 +35,7 @@ function ImagesContainer(props) {
                 <Square
                     src={imgSrc}
                     width={320}
+                    imgWidth={320}
                     overlayHeading={overlayHeading}
                     routePath={routePath}
                     key={routePath}

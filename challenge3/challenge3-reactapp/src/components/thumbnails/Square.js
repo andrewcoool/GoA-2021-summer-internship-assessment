@@ -18,6 +18,7 @@ export default function Square(props) {
                         src={props.src}
                         alt="Asset Missing"
                         className={props.imgClassName}
+                        width={props.imgWidth}
                     ></img>
                 </div>
             </EnlargeOnHover>

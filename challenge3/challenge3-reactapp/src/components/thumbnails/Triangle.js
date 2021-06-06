@@ -23,8 +23,8 @@ export default function Triangle(props) {
                     >
                         <img
                             src={props.src}
+                            width={props.imgWidth}
                             alt="Asset Missing"
-                            className={props.imgClassName}
                         ></img>
                     </div>
                 </div>

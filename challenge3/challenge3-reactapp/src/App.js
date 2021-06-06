@@ -4,25 +4,25 @@ import ImagesContainer from "./components/ImagesContainer";
 
 const DATA = [
     [
-        "/images/surface-ZlJmOUFRBfQ-unsplash.jpg",
+        "/images/surface-ZlJmOUFRBfQ-unsplash-compressed.jpg",
         "circle",
         "Collaboration",
         "/collaboration",
     ],
     [
-        "/images/sergey-pesterev-llGiAyYthDw-unsplash.jpg",
+        "/images/sergey-pesterev-llGiAyYthDw-unsplash-compressed.jpg",
         "4:3",
         "Mountain",
         "/mountain",
     ],
     [
-        "/images/lee-chinyama-6lGiNbAublo-unsplash.jpg",
+        "/images/lee-chinyama-6lGiNbAublo-unsplash-compressed.jpg",
         "square",
         "Graduation",
         "/graduation",
     ],
     [
-        "/images/simone-hutsch-8LwKILB2ceI-unsplash.jpg",
+        "/images/simone-hutsch-8LwKILB2ceI-unsplash-compressed.jpg",
         "triangle",
         "Red Building",
         "/red-building",

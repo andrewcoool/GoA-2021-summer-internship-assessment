@@ -5,4 +5,9 @@
 
 .square > img{
     pointer-events: none;
+    /*Centre the image horizontally*/
+    left: 50%;
+    top: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
 }
