@@ -40,20 +40,22 @@ public class Solution {
                 b4. Add num1 to prevInts.
             Otherwise,
                 Then num1 has appeared before in testArray.
-                There are two cases: num1 forms the half pair - (num1, num1) is a pair such that num1 + num1 = targetSum
+                There are two cases: num1 forms the half pair - i.e. (num1, num1) is a pair such that num1 + num1 = targetSum
                 Or, num1 does not.
 
                 b1. Check if isHalfPairPrinted is false and num1 + num1 = targetSum
                     If true,
                         Then notice that num1 appears at the current index, and also appears
-                        before in the testArray. So num1 appears at least twice and (num1, num1) is a pair.
+                        before in the testArray. So num1 appears at least twice and (num1, num1) is a pair
+                        that adds up to targetSum.
+
                         As isHalfPairPrinted is false, then (num1, num1) has not been printed yet.
                         b1a. Print (num1, num1)
                     Otherwise,
                         Then isHalfPairPrinted is true or num1 + num1 != targetSum.
 
                         If isHalfPairPrinted is true, then we have already printed the pair
-                        (num1, num1) so we don't need to print it yet.
+                        (num1, num1) so we don't need to print it again.
 
                         If num1 + num1 != targetSum, then we have already considered num1 in
                         previous iterations. Notice that if a pair was already printed, then both
@@ -130,6 +132,8 @@ public class Solution {
     }
 
     /*
+    Q2 Reconcile Arrays
+
     How the algorithm works (generally):
     Create two sets setA and setB containing the integers stored in a and b respectively.
     Then the set difference of setA - setB and setB - setA are by definition
