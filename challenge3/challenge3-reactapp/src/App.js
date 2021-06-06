@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "./App.css";
 import ImagesContainer from "./components/ImagesContainer";
 
@@ -11,7 +11,7 @@ import ImagesContainer from "./components/ImagesContainer";
  *
  * Format of each element:
  * [
- *    0 - Path to an image for the thumbnail
+ *    0 - The image source for t
  *    1 - The type of thumbnail to use ('circle', 'square', 'triangle',
  *        '4:3' for stretched rect, '5:4' for stretched rect)
  *    2 - The heading text to be displayed in the overlay when the thumbnail is clicked.
@@ -20,25 +20,25 @@ import ImagesContainer from "./components/ImagesContainer";
  */
 const DATA = [
     [
-        "/images/surface-ZlJmOUFRBfQ-unsplash-compressed.jpg",
+        `${process.env.PUBLIC_URL}/images/surface-ZlJmOUFRBfQ-unsplash-compressed.jpg`,
         "circle",
         "Collaboration",
         "/collaboration",
     ],
     [
-        "/images/sergey-pesterev-llGiAyYthDw-unsplash-compressed.jpg",
+        `${process.env.PUBLIC_URL}/images/sergey-pesterev-llGiAyYthDw-unsplash-compressed.jpg`,
         "4:3",
         "Mountain",
         "/mountain",
     ],
     [
-        "/images/lee-chinyama-6lGiNbAublo-unsplash-compressed.jpg",
+        `${process.env.PUBLIC_URL}/images/lee-chinyama-6lGiNbAublo-unsplash-compressed.jpg`,
         "square",
         "Graduation",
         "/graduation",
     ],
     [
-        "/images/simone-hutsch-8LwKILB2ceI-unsplash-compressed.jpg",
+        `${process.env.PUBLIC_URL}/images/simone-hutsch-8LwKILB2ceI-unsplash-compressed.jpg`,
         "triangle",
         "Red Building",
         "/red-building",
@@ -47,7 +47,7 @@ const DATA = [
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <h1>Hello World</h1>
                 <h3>
@@ -56,7 +56,7 @@ function App() {
                 </h3>
                 <ImagesContainer imagesData={DATA}></ImagesContainer>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 

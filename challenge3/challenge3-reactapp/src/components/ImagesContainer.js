@@ -76,7 +76,7 @@ function ImagesContainer(props) {
                         // On exit of ImageOverlay
                         // Route back to '/' to close the overlay
 
-                        history.push("/");
+                        history.push(window.location.pathname);
                     }}
                 ></ImageOverlay>
             </Route>

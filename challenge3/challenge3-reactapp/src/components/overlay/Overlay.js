@@ -10,7 +10,7 @@ export default function Overlay(props){
             <div className={classes.box}>
                 <button className={classes.exit} onClick={props.onExit}
                     style={{
-                        backgroundImage: "url('/images/exit.png')"
+                        backgroundImage: `url('${process.env.PUBLIC_URL}/images/exit.png')`
                     }}
                 ></button>
                 {props.children}
