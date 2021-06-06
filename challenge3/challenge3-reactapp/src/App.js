@@ -11,7 +11,7 @@ import ImagesContainer from "./components/ImagesContainer";
  *
  * Format of each element:
  * [
- *    0 - The image source for t
+ *    0 - The image source for the thumbnail
  *    1 - The type of thumbnail to use ('circle', 'square', 'triangle',
  *        '4:3' for stretched rect, '5:4' for stretched rect)
  *    2 - The heading text to be displayed in the overlay when the thumbnail is clicked.
@@ -47,6 +47,9 @@ const DATA = [
 
 function App() {
     return (
+        // I used a HashRouter instead of a BrowserRouter to allow the built react app
+        // to work offline (without a server and using file://).
+        // BrowserRouter uses the HTML5 History API, which does not work offline.
         <HashRouter>
             <div className="App">
                 <h1>Hello World</h1>
