@@ -11,6 +11,7 @@ public class ExpandedImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expanded_image);
 
+        // Get the image id of the image clicked from the gallery
         int imageId = getIntent().getIntExtra("IMAGE_ID", -1);
 
         setImageId(imageId);

@@ -2,6 +2,7 @@ package com.example.andrew.challenge2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -58,6 +59,7 @@ public class GalleryActivity extends AppCompatActivity {
          * @param i The index of the new cell.
          * @return
          */
+        @NonNull
         @Override
         public GalleryAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i){
             View newView = LayoutInflater.from(
