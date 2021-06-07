@@ -23,7 +23,6 @@ export default function Circle(props) {
                         src={props.src}
                         alt="Asset Missing"
                         width={props.imgWidth}
-                        className={props.imgClassName}
                     ></img>
                 </div>
             </EnlargeOnHover>

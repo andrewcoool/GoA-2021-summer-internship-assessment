@@ -21,7 +21,6 @@ export default function Square(props) {
                     <img
                         src={props.src}
                         alt="Asset Missing"
-                        className={props.imgClassName}
                         width={props.imgWidth}
                     ></img>
                 </div>

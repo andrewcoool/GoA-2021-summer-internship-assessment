@@ -32,7 +32,6 @@ export default function StretchedRect(props) {
                         alt="Asset Missing"
                         width={props.width}
                         height={height}
-                        className={props.imgClassName}
                     ></img>
                 </div>
             </EnlargeOnHover>
