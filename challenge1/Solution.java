@@ -1,10 +1,7 @@
 package challenge1;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Solution {
     /*
@@ -15,9 +12,9 @@ public class Solution {
     associated to this pair. The algorithm iterates through testArray and accumulates in prevInts the integers that
     appear in testArray. So, in each loop iteration, prevInts is a set containing all integers that appeared at
     smaller indices in testArray. The algorithm works by printing when we reach the larger of the two indices
-    in a pair (call it j for now). We know that testArray[j] + correspondingPairInt = targetSum. We can therefore
-    already determine the corresponding integer for a valid pair that adds up to targetSum. So we can find
-    if this pair exists in testArray if we simply check if correspondingPairInt is in the prevInts set.
+    in a pair (call the larger index in the pair i). We know that testArray[i] + x = targetSum,
+    where x is the value of the other integer in the pair. Note that x is the only unknown, so we can solve for x.
+    Therefore, we can determine if this pair exists in testArray if we simply check if x is in the prevInts set.
 
     Algorithm Structure:
     1. Initialize empty prevInts set.
@@ -35,8 +32,7 @@ public class Solution {
                         Print (min(num1, num2), max(num1, num2))
                     Otherwise,
                         Then num1 still might be part of a pair, and i might be the smaller index of such a pair.
-                        Or it might not. This is left to future iterations to find the larger index of this pair,
-                        if it exists in testArray.
+                        Or it might not be. This is left to future iterations.
                 b4. Add num1 to prevInts.
             Otherwise,
                 Then num1 has appeared before in testArray.
@@ -46,8 +42,9 @@ public class Solution {
                 b1. Check if isHalfPairPrinted is false and num1 + num1 = targetSum
                     If true,
                         Then notice that num1 appears at the current index, and also appears
-                        before in the testArray. So num1 appears at least twice and (num1, num1) is a pair
-                        that adds up to targetSum.
+                        before in the testArray. So num1 appears at least twice.
+                        As we know that num1 + num1 = targetSum, then (num1, num1) is a valid
+                        pair that adds up to targetSum.
 
                         As isHalfPairPrinted is false, then (num1, num1) has not been printed yet.
                         b1a. Print (num1, num1)
@@ -59,7 +56,7 @@ public class Solution {
 
                         If num1 + num1 != targetSum, then we have already considered num1 in
                         previous iterations. Notice that if a pair was already printed, then both
-                        the numbers in the pair must be in prevInts. Either a pair with num1 in it was already
+                        the integers in the pair must be in prevInts. Either a pair with num1 in it was already
                         printed or no such pair exists (so far by this loop iteration).
 
                         In either case, we don't need to do anything.
@@ -103,7 +100,7 @@ public class Solution {
 
     Algorithm Structure:
     1. Initialize an empty toReturn set of integers.
-    2. Loop through the set a (with loop variable x).
+    2. Loop through each element in the set a (with loop variable x, an element of a).
         a. Check if x is not in set b.
             If true,
                 Then add x to toReturn.
