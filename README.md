@@ -1,10 +1,7 @@
-# Game of Apps Development Intern Interview 2021
+# Submission for the GoA Intern Interview 2021
+_(by Andrew Qiu)_
 
-Thanks for your interest in the Game of Apps developer intern position! This repo contains a list of tasks for you to do, so we can get a gauge of your skill and abilities for the position.
-
-You're expected to know the basics of the Git development workflow. If you would like a review, check out this [tutorial](https://www.raywenderlich.com/179717/open-source-collaboration-using-git-and-github).
-
-## Instructions
+## Instructions followed:
 
 Clone this repository to begin. 
 
